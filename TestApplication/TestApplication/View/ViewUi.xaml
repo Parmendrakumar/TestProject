@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.View.ViewUi" Title="Automation Test"
+             xmlns:local="clr-namespace:TestApplication.ViewModel">
+    <ContentPage.BindingContext>
+        <local:MyNameViewModel></local:MyNameViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>       
+            <StackLayout Padding="20,20,20,20" HorizontalOptions="FillAndExpand">
+                <Label Text="Enter Barcode"  HorizontalOptions="StartAndExpand" />
+                <Entry Text="{Binding BarCode}" x:Name="barcode" Placeholder="Enter Barcode" Keyboard="Chat" HorizontalOptions="FillAndExpand" />
+
+                <Label Text="Enter Dimms Width x Height x Depth"  HorizontalOptions="StartAndExpand" />
+                <StackLayout Orientation="Horizontal">
+                <Entry Text="{Binding Width}" x:Name="width" Placeholder="W" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="StartAndExpand"></Entry>
+                <Entry Text="{Binding Height}" x:Name="height" Placeholder="H" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="CenterAndExpand"></Entry>
+                <Entry Text="{Binding Depth}" x:Name="depth" Placeholder="D" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="EndAndExpand"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="RESET" HorizontalOptions="Start" Clicked="Button_Clicked" ></Button>
+                <Button Text="SAVE" HorizontalOptions="EndAndExpand" Command="{Binding showCommand}"></Button>
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

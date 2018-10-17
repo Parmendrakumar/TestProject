@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestApplication" Title="Automation Test"
+             x:Class="TestApplication.MainPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,20,20,20" HorizontalOptions="FillAndExpand">
+            <Label Text="Enter Barcode"  HorizontalOptions="StartAndExpand" />
+            <Entry x:Name="barcode" Placeholder="Enter Barcode" Keyboard="Chat" HorizontalOptions="FillAndExpand" />
+           
+            <Label Text="Enter Dimms Width x Height x Depth"  HorizontalOptions="StartAndExpand" />
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="w" Placeholder="W" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="StartAndExpand"></Entry>
+                <Entry x:Name="h" Placeholder="H" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="CenterAndExpand"></Entry>
+                <Entry x:Name="d" Placeholder="D" HorizontalTextAlignment="Center" Keyboard="Numeric" WidthRequest="50" HorizontalOptions="EndAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                <Button Text="RESET" HorizontalOptions="Start" Clicked="Reset"></Button>
+                <Button Text="SAVE" HorizontalOptions="EndAndExpand" Clicked="Save_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
